@@ -5,8 +5,8 @@ class AuthRepository {
         return await Auth.create(userData);
     }
 
-    async login(email) {
-        return await Auth.findOne({ where: { email } });
+    async findByEmail(email) {
+        return await User.findOne({ where: { email } });
     }
 }
 
