@@ -48,7 +48,7 @@ class AuthController {
 
             const user = await this.authService.registerUser({ name, email, password, role });
 
-            return ResponseHandler.success(res, { ...user.get(), password: undefined }, 'User registered successfully', 201);
+            return ResponseHandler.success(res, { ...user.get(), password: undefined, role: undefined }, 'User registered successfully', 201);
 
         } catch (error) {
             console.log(error)
@@ -70,7 +70,7 @@ class AuthController {
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });
 
-            ResponseHandler.success(res, { ...user._doc, password: undefined, token }, 'Login successful');
+            ResponseHandler.success(res, { ...user.get(), password: undefined, role: undefined, token }, 'Login successful');
 
         } catch (error) {
             console.log(error)
