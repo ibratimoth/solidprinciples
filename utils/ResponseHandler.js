@@ -1,6 +1,6 @@
 class ResponseHandler {
-    static success(res, data, status = 200) {
-        return res.status(status).json({ success: true, data });
+    static success(res, data, message, status = 200) {
+        return res.status(status).json({ success: true, message, data });
     }
     static noUser(res, message, status = 200) {
         return res.status(status).json({ success: true, message });
