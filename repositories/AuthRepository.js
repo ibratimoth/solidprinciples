@@ -6,7 +6,7 @@ class AuthRepository {
     }
 
     async findByEmail(email) {
-        return await User.findOne({ where: { email } });
+        return await Auth.findOne({ where: { email } });
     }
 }
 

@@ -1,14 +1,13 @@
 const jwt = require('jsonwebtoken');
-const dotenv = require('dotenv');
+require('dotenv').config();
 
-dotenv.config();
-
-class GenerateToken {
-    generateToken(userId) {
-        return jwt.sign({ userId }, process.env.JWT_SECRET, {
+class TokenUtil {
+    generateToken(userId, role) {
+        return jwt.sign({ userId, role }, process.env.JWT_SECRET, {
             expiresIn: '7d',
         });
     }
 }
 
-module.exports = GenerateToken;
+module.exports = TokenUtil;
+

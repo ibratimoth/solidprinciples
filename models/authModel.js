@@ -19,7 +19,7 @@ const Auth = sequelize.define('Auth', {
     },
     role: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         defaultValue: 0,  // 0 = regular user, 1 = admin
     }
 });

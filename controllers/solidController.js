@@ -10,7 +10,7 @@ class SolidController {
         const { name, email, designation } = req.body;
         try {
             if (!name || !email || !designation) {
-                ResponseHandler.fieldVal(res, 'All field required!!')
+                ResponseHandler.fieldVal(res, 'All field are required!!')
             }
 
             const user = await this.userService.createUser(req.body);
